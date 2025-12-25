@@ -1,0 +1,4 @@
+# Ignore Excel binary files
+*.xlsm
+*.xlsx
+*.xlsb
