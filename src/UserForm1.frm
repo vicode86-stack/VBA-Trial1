@@ -16,9 +16,34 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub cmdCalculate_Click()
-    objSquare.A = Val(txtA.Text)
-    objSquare.B = Val(txtB.Text)
+    Dim a As Double
+    Dim b As Double
+    Dim result As Double
 
-    lblResult.Caption = "(a + b)^2 = " & objSquare.Calculate
+    ' Validate input
+    If Not IsNumeric(txtA.value) Or Not IsNumeric(txtB.value) Then
+        MsgBox "Please enter valid numbers", vbExclamation
+        Exit Sub
+    End If
+
+    a = CDbl(txtA.value)
+    b = CDbl(txtB.value)
+
+    ' Determine formula
+    If optAddSq.value = True Then
+        result = (a + b) ^ 2
+
+    ElseIf optSubSq.value = True Then
+        result = (a - b) ^ 2
+
+    ElseIf optSumSq.value = True Then
+        result = a ^ 2 + b ^ 2
+
+    Else
+        MsgBox "Please select a formula", vbExclamation
+        Exit Sub
+    End If
+
+    lblResult.Caption = "Result: " & result
 End Sub
 

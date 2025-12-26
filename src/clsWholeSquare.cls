@@ -12,23 +12,23 @@ Option Explicit
 Private pA As Double
 Private pB As Double
 
-Public Property Let A(value As Double)
+Public Property Let a(value As Double)
     pA = value
 End Property
 
-Public Property Get A() As Double
-    A = pA
+Public Property Get a() As Double
+    a = pA
 End Property
 
-Public Property Let B(value As Double)
+Public Property Let b(value As Double)
     pB = value
 End Property
 
-Public Property Get B() As Double
-    B = pB
+Public Property Get b() As Double
+    b = pB
 End Property
 
 Public Function Calculate() As Double
-    Calculate = pA ^ 2 + 2 * pA * pB + B ^ 2
+    Calculate = pA ^ 2 + 2 * pA * pB + b ^ 2
 End Function
 
